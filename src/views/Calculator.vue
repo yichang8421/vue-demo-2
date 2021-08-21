@@ -62,7 +62,7 @@
         curMethod = "plus";
         result = 0;
 
-        compute(method, fNumber, sNumber) {
+        compute(method: string, fNumber: number, sNumber: number): number {
             switch (method) {
                 case "plus":
                     return fNumber + sNumber;
@@ -82,12 +82,12 @@
             this.setResult();
         }
 
-        changeMethod(method) {
+        changeMethod(method: string): void {
             this.curMethod = method;
             this.setResult();
         }
 
-        setResult() {
+        setResult(): void {
             this.result = this.compute(
                 this.curMethod,
                 this.firstNumber,

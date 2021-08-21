@@ -21,7 +21,7 @@
         @Prop(String)
         readonly curMethod: string;
 
-        changeMethod() {
+        changeMethod(): void {
             this.$emit("changeMethod", this.method);
         }
     }

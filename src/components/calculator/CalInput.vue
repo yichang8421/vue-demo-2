@@ -1,8 +1,11 @@
 <template>
-    <input type="text"
-           value="0"
-           @input="setNumber"
-    />
+    <label>
+        <input type="text"
+               value="0"
+               @input="setNumber"
+               v-model="currentValue"
+        />
+    </label>
 </template>
 
 <script lang="ts">
@@ -14,9 +17,13 @@
         @Prop(String)
         readonly field: string;
 
-        setNumber(e): void {
-            const value = Number(e.target.value);
-            this.$emit("setNumber", this.field, value);
+        currentValue = 0;
+
+        setNumber(): void {
+            // e类型有问题
+            // const value = Number(e.target.value);
+            this.currentValue = Number(this.currentValue);
+            this.$emit("setNumber", this.field, this.currentValue);
         }
     }
 </script>
