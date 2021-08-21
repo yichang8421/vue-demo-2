@@ -12,7 +12,3 @@
         readonly result!: number;
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
