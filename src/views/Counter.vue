@@ -4,13 +4,13 @@
 
         <counter-button
                 innerText="+1"
-                action="plas"
-                @compute="compute"
+                action="plus"
+                @dispatch="dispatch"
         />
         <counter-button
                 innerText="-1"
                 action="minus"
-                @compute="compute"
+                @dispatch="dispatch"
         />
     </div>
 </template>
@@ -20,6 +20,7 @@
     import {Component} from "vue-property-decorator";
     import CounterResult from "@/components/counter/Result";
     import CounterButton from "@/components/counter/Button";
+    import dispatch from "@/dispatchers/counter";
 
     @Component({
         components: {CounterResult, CounterButton}
@@ -27,17 +28,9 @@
     export default class Counter extends Vue {
         result = 0;
 
-        compute(action: string):void {
-            switch (action) {
-                case "plas":
-                    this.result += 1;
-                    break;
-                case "minus":
-                    this.result -= 1;
-                    break;
-                default:
-                    break;
-            }
+        // eslint-disable-next-line no-undef
+        dispatch(action: string): void {
+            dispatch(this)(action);
         }
     }
 </script>

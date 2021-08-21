@@ -21,7 +21,7 @@
         readonly innerText!: string;
 
         compute(): void {
-            this.$emit("compute", this.action);
+            this.$emit("dispatch", this.action);
         }
     }
 </script>
