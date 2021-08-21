@@ -23,7 +23,8 @@
             // e类型有问题
             // const value = Number(e.target.value);
             this.currentValue = Number(this.currentValue);
-            this.$emit("setNumber", this.field, this.currentValue);
+
+            this.$emit("dispatch", "SET_NUMBER", this.field, this.currentValue);
         }
     }
 </script>

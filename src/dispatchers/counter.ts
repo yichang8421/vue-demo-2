@@ -1,12 +1,12 @@
 import reducer from "@/reducers/counter";
 import action from "@/actions/counter";
 
-const {PLUS, MINUS} = action
+const {PLUS, MINUS} = action;
 
-export default (ctx: Data) => {
+export default (ctx: CounterData) => {
     const {plus, minus} = reducer(ctx);
 
-    return function (type: string) {
+    return function (type: string): void {
         switch (type) {
             case PLUS:
                 ctx.result = plus();

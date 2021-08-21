@@ -6,11 +6,11 @@
         <div class="inputs">
             <cal-input
                     field="firstNumber"
-                    @setNumber="setNumber"
+                    @dispatch="dispatch"
             />
             <cal-input
                     field="secondNumber"
-                    @setNumber="setNumber"
+                    @dispatch="dispatch"
             />
         </div>
         <div class="buttons">
@@ -18,25 +18,25 @@
                     innerText="+"
                     method="plus"
                     :curMethod="curMethod"
-                    @changeMethod="changeMethod"
+                    @dispatch="dispatch"
             />
             <cal-button
                     innerText="-"
                     method="minus"
                     :curMethod="curMethod"
-                    @changeMethod="changeMethod"
+                    @dispatch="dispatch"
             />
             <cal-button
                     innerText="*"
                     method="mul"
                     :curMethod="curMethod"
-                    @changeMethod="changeMethod"
+                    @dispatch="dispatch"
             />
             <cal-button
                     innerText="/"
                     method="div"
                     :curMethod="curMethod"
-                    @changeMethod="changeMethod"
+                    @dispatch="dispatch"
             />
         </div>
     </div>
@@ -48,6 +48,8 @@
     import CalResult from "@/components/calculator/CalResult.vue";
     import CalInput from "@/components/calculator/CalInput.vue";
     import CalButton from "@/components/calculator/CalButton.vue";
+
+    import dispatch from "@/dispatchers/calculator";
 
     @Component({
         components: {
@@ -62,38 +64,42 @@
         curMethod = "plus";
         result = 0;
 
-        compute(method: string, fNumber: number, sNumber: number): number {
-            switch (method) {
-                case "plus":
-                    return fNumber + sNumber;
-                case "minus":
-                    return fNumber - sNumber;
-                case "mul":
-                    return fNumber * sNumber;
-                case "div":
-                    return fNumber / sNumber;
-                default:
-                    break;
-            }
+        dispatch(...args: never[]): void {
+            dispatch(this)(...args);
         }
 
-        setNumber(field: string, value: number): void {
-            this[field] = value;
-            this.setResult();
-        }
-
-        changeMethod(method: string): void {
-            this.curMethod = method;
-            this.setResult();
-        }
-
-        setResult(): void {
-            this.result = this.compute(
-                this.curMethod,
-                this.firstNumber,
-                this.secondNumber
-            );
-        }
+        // compute(method: string, fNumber: number, sNumber: number): number {
+        //     switch (method) {
+        //         case "plus":
+        //             return fNumber + sNumber;
+        //         case "minus":
+        //             return fNumber - sNumber;
+        //         case "mul":
+        //             return fNumber * sNumber;
+        //         case "div":
+        //             return fNumber / sNumber;
+        //         default:
+        //             break;
+        //     }
+        // }
+        //
+        // setNumber(field: string, value: number): void {
+        //     this[field] = value;
+        //     this.setResult();
+        // }
+        //
+        // changeMethod(method: string): void {
+        //     this.curMethod = method;
+        //     this.setResult();
+        // }
+        //
+        // setResult(): void {
+        //     this.result = this.compute(
+        //         this.curMethod,
+        //         this.firstNumber,
+        //         this.secondNumber
+        //     );
+        // }
     }
 </script>
 

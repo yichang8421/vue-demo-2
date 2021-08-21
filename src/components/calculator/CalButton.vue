@@ -22,7 +22,7 @@
         readonly curMethod: string;
 
         changeMethod(): void {
-            this.$emit("changeMethod", this.method);
+            this.$emit("dispatch", "CHANGE_METHOD", this.method);
         }
     }
 </script>

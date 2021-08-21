@@ -1,4 +1,4 @@
-function counterReducer(data: Data): CounterReducer {
+function counterReducer(data: CounterData): CounterReducer {
     function plus(): number {
         return data.result + 1;
     }
