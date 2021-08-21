@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div>Counter.vue
+        <Nav/>
         <counter-result :result="result"/>
 
         <counter-button
