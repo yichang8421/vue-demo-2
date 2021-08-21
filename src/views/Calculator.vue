@@ -67,39 +67,6 @@
         dispatch(...args: never[]): void {
             dispatch(this)(...args);
         }
-
-        // compute(method: string, fNumber: number, sNumber: number): number {
-        //     switch (method) {
-        //         case "plus":
-        //             return fNumber + sNumber;
-        //         case "minus":
-        //             return fNumber - sNumber;
-        //         case "mul":
-        //             return fNumber * sNumber;
-        //         case "div":
-        //             return fNumber / sNumber;
-        //         default:
-        //             break;
-        //     }
-        // }
-        //
-        // setNumber(field: string, value: number): void {
-        //     this[field] = value;
-        //     this.setResult();
-        // }
-        //
-        // changeMethod(method: string): void {
-        //     this.curMethod = method;
-        //     this.setResult();
-        // }
-        //
-        // setResult(): void {
-        //     this.result = this.compute(
-        //         this.curMethod,
-        //         this.firstNumber,
-        //         this.secondNumber
-        //     );
-        // }
     }
 </script>
 
