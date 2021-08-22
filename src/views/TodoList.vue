@@ -1,7 +1,7 @@
 <template>
     <div>
-        <Nav/>
         TodoList.vue
+        <Nav/>
         <td-title :title="title"/>
         <td-form @dispatch="dispatch"/>
         <td-list
