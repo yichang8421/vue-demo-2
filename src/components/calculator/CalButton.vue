@@ -15,11 +15,11 @@
     @Component
     export default class CalButton extends Vue {
         @Prop(String)
-        readonly innerText: string;
+        readonly innerText!: string;
         @Prop(String)
-        readonly method: string;
+        readonly method!: string;
         @Prop(String)
-        readonly curMethod: string;
+        readonly curMethod!: string;
 
         changeMethod(): void {
             this.$emit("dispatch", "CHANGE_METHOD", this.method);

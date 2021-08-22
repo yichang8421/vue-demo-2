@@ -7,13 +7,16 @@ type CalculatorData = {
     secondNumber: number;
     curMethod: string;
     result: number;
-    setNumber?: (field: string, value: number) => number,
-    changeMethod?: (method: string) => number
 }
 
 type CalReducer = {
     setNumber(field: string, value: number): number,
     changeMethod: (method: string) => number
+}
+
+type CalAction = {
+    SET_NUMBER: string,
+    CHANGE_METHOD: string
 }
 
 type Action = {

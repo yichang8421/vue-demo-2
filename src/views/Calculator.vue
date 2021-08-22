@@ -64,7 +64,10 @@
         curMethod = "plus";
         result = 0;
 
+        // eslint-disable-next-line no-undef
         dispatch(...args: never[]): void {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             dispatch(this)(...args);
         }
     }

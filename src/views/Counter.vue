@@ -19,8 +19,8 @@
 <script lang="ts">
     import Vue from "vue";
     import {Component} from "vue-property-decorator";
-    import CounterResult from "@/components/counter/Result";
-    import CounterButton from "@/components/counter/Button";
+    import CounterResult from "@/components/counter/Result.vue";
+    import CounterButton from "@/components/counter/Button.vue";
     import dispatch from "@/dispatchers/counter";
 
     @Component({

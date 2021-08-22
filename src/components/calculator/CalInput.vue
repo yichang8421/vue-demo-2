@@ -15,7 +15,7 @@
     @Component
     export default class CalInputs extends Vue {
         @Prop(String)
-        readonly field: string;
+        readonly field!: string;
 
         currentValue = 0;
 

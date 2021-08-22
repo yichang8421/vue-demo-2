@@ -11,7 +11,7 @@
     @Component
     export default class CalResult extends Vue {
         @Prop(Number)
-        readonly result: number;
+        readonly result!: number;
     }
 </script>
 
