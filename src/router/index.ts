@@ -2,8 +2,9 @@ import Vue from "vue";
 import VueRouter, {RouteConfig} from "vue-router";
 
 // @ts-ignore
-import Counter from "@/views/Counter";
+import Counter from "@/views/Counter.vue";
 import Calculator from "@/views/Calculator.vue";
+import TodoList from "@/views/TodoList.vue";
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,10 @@ const routes: Array<RouteConfig> = [
     {
         path: "/calculator",
         component: Calculator
+    },
+    {
+        path: "/todulist",
+        component: TodoList
     }
 ];
 

@@ -28,3 +28,22 @@ type CounterReducer = {
     plus(): number,
     minus: () => number
 };
+
+type ToDoListItem = {
+    text: string,
+    completed: boolean,
+    id: Date
+}
+
+type TodoListAction = {
+    ADD: string,
+    REMOVE: string,
+    COMPLETED: string
+}
+
+type TodoList = {
+    title: string;
+    todoData: ToDoListItem[];
+}
+
+type TodoData = ToDoListItem[]
